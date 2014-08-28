@@ -1,0 +1,15 @@
+<div class="specific_user_profile">
+	<h2>Welcome to <%= @user.name %>'s profile</h2>
+	<br>
+	<p>@<%= @user.handle %></p>
+	<br>
+	<p>Location: <%= @user.location %>a</p>
+	<br>
+	<p>Bio: <%= @user.bio %></p>
+	<p><%= @user.name %>'s shout outs:</p>
+	<% @user.shout_outs.each do |shout_out| %>
+		<p>shout out created on <%= shout_out.created_at %></p>
+		<p><%= shout_out.content %></p>
+		<br>
+	<% end %>
+</div>

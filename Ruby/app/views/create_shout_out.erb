@@ -2,6 +2,8 @@
   <br>
   <h1>Welcome, <%= @user.handle %>!</h1>
   <br>
+  <%= @message %><a href="/user/<%= @user.id %>">http://127.0.0.1:9393/user/<%= @user.id %></a>
+  <br>
   <form method="post" action="/save_shout_out">
     <input type="text" placeholder="enter your shout out here" name="new_shout_out_content" />
     <input type="submit" value="holla" />
