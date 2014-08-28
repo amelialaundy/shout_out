@@ -135,6 +135,13 @@ task "console" do
   exec "irb -r./config/environment"
 end
 
+desc 'Prepare test environment'
+task :test_prepare do
+  exec("DATABASE_URL='postgres://localhost/Ruby_test' rake db:drop &&
+        DATABASE_URL='postgres://localhost/Ruby_test' rake db:create &&
+        DATABASE_URL='postgres://localhost/Ruby_test' rake db:migrate")
+end
+
 desc "Run the specs"
 RSpec::Core::RakeTask.new(:spec)
 
