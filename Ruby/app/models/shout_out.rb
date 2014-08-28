@@ -1,4 +1,4 @@
 class ShoutOut < ActiveRecord::Base
-  belongs_to: User
+  belongs_to :user
   # Remember to create a migration!
 end
