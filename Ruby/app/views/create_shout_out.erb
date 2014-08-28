@@ -2,8 +2,8 @@
   <br>
   <h1>Welcome, <%= @user.handle %>!</h1>
   <br>
-  <form method="post" action="shout_out">
-    <input type="text" placeholder="enter your Shout Out here" name="user_input" />
+  <form method="post" action="/save_shout_out">
+    <input type="text" placeholder="enter your shout out here" name="new_shout_out_content" />
     <input type="submit" value="holla" />
   </form>
 </div>
