@@ -1,9 +1,23 @@
 .container {
   margin: 20px auto;
   width: 600px;
+  height: 1200px;
   padding: 0px 20px 20px 20px;
-  border: 1px dotted black;
 }
 th {
   text-align: left;
+}
+h1 {
+	font-size: 55px;
+	font-family: 'Inconsolata';
+}
+h4 {
+	font-family: 'Inconsolata';
+}
+::-webkit-input-placeholder {
+   font-family: 'Inconsolata';
+   color: #CA3767;
+}
+img {
+	margin-left: 40px;
 }
