@@ -36,4 +36,22 @@ post '/user/logout' do
 	erb :successful_logout
 end
 
+get '/create_account' do
+	erb :create_account
+end
+
+post '/create_account' do
+	if params[:password] == params[:password_again] 
+
+		params.tap { |kv| kv.delete("password_again") }
+		puts params.inspect
+		@user = User.create(params)
+		session[:user_id] = @user.id
+		erb :create_shout_out
+	else
+		@message = "incorect password, please try again"
+		erb :create_account
+	end
+end
+
 

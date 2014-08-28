@@ -1,0 +1,16 @@
+<div class="create_account">
+	<%= @message %>
+	<form action="/create_account" method="post" id="user_input_field">
+    <input name="name" placeholder="enter your name" type="text" >
+    <input name="password" placeholder="password" type="password">
+    <input name="password_again" placeholder="retype password" type="password">
+    <input name="email" placeholder="email address" type="text">
+    <input name="handle" placeholder="please choose handle" type="text">
+    <br>
+
+      <div class="submit">
+        <input type="submit"/>
+      </div>
+
+    </form>
+</div>
