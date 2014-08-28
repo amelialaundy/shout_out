@@ -3,6 +3,6 @@ get '/' do
   erb :index
 end
 
-get '/welcome' do
-  erb :welcome
+get '/shout_out' do
+  erb :create_shout_out
 end
