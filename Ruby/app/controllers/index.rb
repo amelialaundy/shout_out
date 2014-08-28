@@ -47,6 +47,7 @@ post '/create_account' do
 		puts params.inspect
 		@user = User.create(params)
 		session[:user_id] = @user.id
+		@message = "Your own page: "
 		erb :create_shout_out
 	else
 		@message = "incorect password, please try again"
