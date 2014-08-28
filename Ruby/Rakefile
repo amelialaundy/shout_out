@@ -92,6 +92,11 @@ namespace :db do
     exec("createdb #{DB_NAME}")
   end
 
+  desc "drops, creates and migrates the database"
+  task :reset do
+    exec "rake db:drop && rake db:create && rake db:migrate"
+  end
+
   desc "Drop the database at #{DB_NAME}"
   task :drop do
     puts "Dropping database #{DB_NAME}..."
