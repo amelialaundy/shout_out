@@ -1,6 +1,6 @@
 get '/' do
   # Look in app/views/index.erb
-  erb :index
+  erb :sign_in
 end
 
 get '/shout_out' do
