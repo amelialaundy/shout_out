@@ -9,7 +9,7 @@ post '/receive_login_details' do
 		redirect '/shout_out'		#if the password is valid/matches, creates the session via a new key (rack magic), redirects to create_shout_out page
 	else
 		@message = "login was invalid"
-		erb :sign_in
+		erb :sign_in ## consider changing to redirect
 	end
 end
 
@@ -21,7 +21,6 @@ end
 
 post '/save_shout_out' do
 	ShoutOut.create(content: params[:new_shout_out_content], user_id: session[:user_id])
-
 	@user = User.find(session[:user_id])
 	erb :my_shout_outs
 end
