@@ -2,12 +2,7 @@ get '/' do
 	erb :sign_in
 end
 
-get '/shout_out' do
-	@user = User.find(session[:user_id])
-	erb :create_shout_out
-end
-
-post '/shout_out' do
+post '/receive_login_details' do
 	@user = User.find_by_handle(params[:user_name])
 	if @user.is_password_valid(params[:password])
 		session[:user_id] = @user.id #session starts as an empty hash which is then assigned our users id
@@ -17,6 +12,12 @@ post '/shout_out' do
 		erb :sign_in
 	end
 end
+
+get '/shout_out' do
+	@user = User.find(session[:user_id])
+	erb :create_shout_out
+end
+
 
 post '/save_shout_out' do
 	ShoutOut.create(content: params[:new_shout_out_content], user_id: session[:user_id])
