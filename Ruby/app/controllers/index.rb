@@ -25,4 +25,15 @@ post '/save_shout_out' do
 
 end
 
+get '/user/:id' do
+	@user = User.find(params[:id])
+	erb :specific_user_profile
+end
+
+post '/user/logout' do
+	@user = User.find(session[:user_id])
+	session[:user_id] = nil
+	erb :successful_logout
+end
+
 
