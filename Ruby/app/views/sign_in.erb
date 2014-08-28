@@ -4,15 +4,23 @@
   <h1>Welcome to ShoutOut!</h1>
   <%= @message %>
   <br>
+
   <form action="/receive_login_details" method="post" id="user_input_field" >
     <input name="user_name" placeholder="enter your username" type="text" >
+
     <input name="password" placeholder="bang in your password" type="password" >
+    <div class="submit">
     <input type="submit"/>
+    </div>
     <br>
-    <!-- <!<div class="submit">
-      
-    <!/div> -->
-  </form>
+    </form>
+
+    <div class="create_account">
+      <form action="/create_account" method="get">
+        <button type='submit'>Sign up here</button>
+      </form>
+    </div>
+
   <br>
   <h4>Shout it out (loud!) to people doing good in your world.</h4>
   <img src='http://2.bp.blogspot.com/-XVcJucSxENY/T_D_gobmiVI/AAAAAAAAAIU/Nu3CMHGMkkE/s1600/do+something+good.jpg'/>

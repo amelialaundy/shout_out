@@ -20,5 +20,12 @@
 </head>
 <body>
     <%= yield %>
+  <footer>
+    <% if session[:user_id] %>
+    <form action="/user/logout" method="post">
+      <button type='submit'>Logout</button>
+    </form>
+    <% end %>
+  </footer>
 </body>
 </html>

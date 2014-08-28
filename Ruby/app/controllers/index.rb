@@ -25,4 +25,34 @@ post '/save_shout_out' do
 
 end
 
+get '/user/:id' do
+	@user = User.find(params[:id])
+	erb :specific_user_profile
+end
+
+post '/user/logout' do
+	@user = User.find(session[:user_id])
+	session[:user_id] = nil
+	erb :successful_logout
+end
+
+get '/create_account' do
+	erb :create_account
+end
+
+post '/create_account' do
+	if params[:password] == params[:password_again] 
+
+		params.tap { |kv| kv.delete("password_again") }
+		puts params.inspect
+		@user = User.create(params)
+		session[:user_id] = @user.id
+		@message = "Your own page: "
+		erb :create_shout_out
+	else
+		@message = "incorect password, please try again"
+		erb :create_account
+	end
+end
+
 
