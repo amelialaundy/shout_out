@@ -21,7 +21,7 @@ end
 
 post '/save_shout_out' do
 	ShoutOut.create(content: params[:new_shout_out_content], user_id: session[:user_id])
-	@all_shout_outs = ShoutOut.find_by_user_id(session[:user_id])
+
 	@user = User.find(session[:user_id])
 	erb :my_shout_outs
 end

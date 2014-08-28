@@ -1,9 +1,10 @@
 <div class="my_shout_outs">
-  <h3>@user.handle</h3>
+  <h3>@<%= @user.handle%></h3>
   <br>
-  <% @all_shout_outs.each do |shout_out| %>
+  <% @user.shout_outs.each do |shout_out| %>
   <div class="shout_out">
     <%= shout_out.content %><br>
     <%= shout_out.created_at %>
   </div>
+  <% end %>
 </div>
