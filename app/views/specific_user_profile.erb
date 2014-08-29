@@ -1,3 +1,4 @@
+<div class= 'container'>
 <div class="specific_user_profile">
 	<h2>Welcome to <%= @user.name %>'s profile</h2>
 	<br>
@@ -6,7 +7,8 @@
   <input type="submit" value="holla" />
   </form> -->
   <br>
-	<p>@<%= @user.handle %></p>
+  <div class= profile>
+  	<p>@<%= @user.handle %></p>
 	<br>
 	<p>Location: <%= @user.location %>a</p>
 	<br>
@@ -16,6 +18,7 @@
 		<p>shout out created on <%= shout_out.created_at %></p>
 		<p><%= shout_out.content %></p>
 		<br>
+	</div>
 	<% end %>
 
 
@@ -33,5 +36,6 @@
 		<br>
 	<% end %>
 
+</div>
 
 </div>
