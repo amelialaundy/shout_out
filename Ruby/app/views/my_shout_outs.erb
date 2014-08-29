@@ -1,0 +1,21 @@
+<div class="my_shout_outs">
+  <h3>@<%= @user.handle%></h3>
+  <br>
+  <% @user.shout_outs.each do |shout_out| %>
+  <div class="shout_out">
+    <%= shout_out.content %><br>
+    <br>
+    <%= shout_out.created_at %>
+  </div>
+  <% end %>
+</div>
+
+ <div class="home_button">
+    <a href='/shout_out'>
+      <img src='http://www.clker.com/cliparts/0/5/4/a/13652128191594422681megaphone.png'/>
+    </a>
+</div>
+<!-- <div class="go_home">
+  <p>E.T. go home</p>
+</div> -->
+
