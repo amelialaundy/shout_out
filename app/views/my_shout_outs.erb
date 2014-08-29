@@ -1,6 +1,11 @@
 <div class="my_shout_outs">
   <h3>@<%= @user.handle%></h3>
   <br>
+   <form method="post" action="/save_shout_out">
+  <input type="text" placeholder="enter your shout out here" name="new_shout_out_content" />
+  <input type="submit" value="holla" />
+  </form>
+  <br>
   <% @user.shout_outs.each do |shout_out| %>
   <div class="shout_out">
     <%= shout_out.content %><br>
@@ -10,14 +15,4 @@
   <% end %>
 </div>
 
-<div class="home_button">
-    <a href='/shout_out'>
-      <img src='http://www.clker.com/cliparts/0/5/4/a/13652128191594422681megaphone.png'/>
-    </a>
-</div>
-
-<5=
-<!-- <div class="go_home">
-  <p>E.T. go home</p>
-</div> -->
 
