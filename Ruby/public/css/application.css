@@ -21,7 +21,7 @@ h4 {
 .home_button img {
   max-height:10%;
   width: auto;
-  position: absolute; top: 20px; right: 600px;
+  position: absolute; top: 20px; right: 550px;
 }
 .my_shout_outs {
   margin: 20px auto;
@@ -29,11 +29,13 @@ h4 {
   height: 1200px;
   padding: 0px 20px 20px 20px;
   position: static;
+  overflow: scroll;
 }
 .home_button{
   float: right;
   margin-top: 15%;
 }
+
 
 
 
