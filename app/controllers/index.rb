@@ -58,4 +58,18 @@ post '/create_account' do
 	end
 end
 
+post '/follow/:id' do
+	@current_user = User.find(session[:user_id])
+	user_to_follow = User.find(params[:id])
+	puts @current_user.handle
+	puts user_to_follow
+	@current_user.followees << user_to_follow
+	erb :my_followers
+end
+
+
+
+
+
+
 

@@ -12,4 +12,10 @@
 		<p><%= shout_out.content %></p>
 		<br>
 	<% end %>
+
+	<form action="/follow/<%= @user.id %>" method="post">
+      <button type='submit'>follow @<%= @user.handle %></button>
+  </form>
+
+
 </div>
