@@ -1,6 +1,6 @@
 <div class="my_followers">
   <p>People you follow:</p><br>
   <% @current_user.followees.each do |followee| %>
-    <a href="/user/<% followee.id %>"><%= followee.handle %></a>
+    <a href="/user/<%= followee.id %>"><%= followee.handle %></a>
   <% end %>
 </div>

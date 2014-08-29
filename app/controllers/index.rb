@@ -4,17 +4,16 @@ end
 
 post '/receive_login_details' do
 	@user = User.find_by_handle(params[:user_name])
-	p @user.handle
 	if @user = User.validate(params[:user_name], params[:password])
 		session[:user_id] = @user.id #session starts as an empty hash which is then assigned our users id
-		redirect '/shout_out'		#if the password is valid/matches, creates the session via a new key (rack magic), redirects to create_shout_out page
+		redirect '/news_feed'		#if the password is valid/matches, creates the session via a new key (rack magic), redirects to create_shout_out page
 	else
 		@message = "login was invalid"
 		erb :sign_in
 	end
 end
 
-get '/shout_out' do
+get '/news_feed' do
 	@user = User.find(session[:user_id])
 	erb :create_shout_out
 end
@@ -30,6 +29,7 @@ end
 
 get '/user/:id' do
 	@user = User.find(params[:id])
+	@current_user = User.find(session[:user_id])
 	erb :specific_user_profile
 end
 
@@ -47,7 +47,6 @@ post '/create_account' do
 	if params[:password] == params[:password_again]
 
 		params.tap { |kv| kv.delete("password_again") }
-		puts params.inspect
 		@user = User.create(params)
 		session[:user_id] = @user.id
 		@message = "Your own page: "
@@ -61,8 +60,7 @@ end
 post '/follow/:id' do
 	@current_user = User.find(session[:user_id])
 	user_to_follow = User.find(params[:id])
-	puts @current_user.handle
-	puts user_to_follow
+
 	@current_user.followees << user_to_follow
 	erb :my_followers
 end

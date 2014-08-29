@@ -13,9 +13,20 @@
 		<br>
 	<% end %>
 
+
+	<% if @current_user.followees.include? @user || @current_user.id == @user.id %>
+	<% else %>
 	<form action="/follow/<%= @user.id %>" method="post">
       <button type='submit'>follow @<%= @user.handle %></button>
   </form>
+  <% end %>
+
+  <p>See who @<%= @user.handle %> follows: </p>
+  <% @user.followees.each do |followee| %>
+		<a href="/user/<%= followee.id %>"><%= followee.handle %></a>
+
+		<br>
+	<% end %>
 
 
 </div>
