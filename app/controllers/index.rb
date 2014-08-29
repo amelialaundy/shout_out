@@ -48,8 +48,11 @@ post '/create_account' do
 
 		params.tap { |kv| kv.delete("password_again") }
 		@user = User.create(params)
+		puts params
+		puts @user.errors.messages
 		session[:user_id] = @user.id
 		@message = "Your own page: "
+		p @user.id
 		erb :news_feed
 	else
 		@message = "incorect password, please try again"
