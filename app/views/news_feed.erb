@@ -1,3 +1,4 @@
+<div class= 'container'>
 <div class='create_shout_out'>
   <br>
   <h1>Welcome, <%= @user.handle %>!</h1>
@@ -8,4 +9,16 @@
     <input type="text" placeholder="enter your shout out here" name="new_shout_out_content" />
     <input type="submit" value="holla" />
   </form>
+</div>
+<br>
+<br>
+<div class= 'shout_out'>
+<% @user.followees.each do |followee| %>
+   <% followee.shout_outs.each do |shout_out| %>
+    <p>@<%= followee.handle %></p>
+    <p><%= shout_out.content %></p>
+    <p><%= shout_out.created_at %></p>
+  <% end %>
+<% end %>
+</div>
 </div>

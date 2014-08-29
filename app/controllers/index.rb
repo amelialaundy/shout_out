@@ -6,7 +6,7 @@ post '/receive_login_details' do
 	@user = User.find_by_handle(params[:user_name])
 	if @user = User.validate(params[:user_name], params[:password])
 		session[:user_id] = @user.id #session starts as an empty hash which is then assigned our users id
-		redirect '/news_feed'		#if the password is valid/matches, creates the session via a new key (rack magic), redirects to create_shout_out page
+		erb :news_feed		#if the password is valid/matches, creates the session via a new key (rack magic), redirects to create_shout_out page
 	else
 		@message = "login was invalid"
 		erb :sign_in
@@ -50,7 +50,7 @@ post '/create_account' do
 		@user = User.create(params)
 		session[:user_id] = @user.id
 		@message = "Your own page: "
-		erb :create_shout_out
+		erb :news_feed
 	else
 		@message = "incorect password, please try again"
 		erb :create_account
