@@ -1,6 +1,11 @@
 <div class="specific_user_profile">
 	<h2>Welcome to <%= @user.name %>'s profile</h2>
 	<br>
+  <form method="post" action="/save_shout_out">
+  <input type="text" placeholder="enter your shout out here" name="new_shout_out_content" />
+  <input type="submit" value="holla" />
+  </form>
+  <br>
 	<p>@<%= @user.handle %></p>
 	<br>
 	<p>Location: <%= @user.location %>a</p>
