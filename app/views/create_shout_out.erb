@@ -1,11 +1,14 @@
-<div class='create_shout_out'>
-  <br>
-  <h1>Welcome, <%= @user.handle %>!</h1>
-  <br>
-  <%= @message %><a href="/user/<%= @user.id %>"><%= @user.id %>Go to your profile!</a>
-  <br>
-  <form method="post" action="/save_shout_out">
-    <input type="text" placeholder="enter your shout out here" name="new_shout_out_content" />
-    <input type="submit" value="holla" />
-  </form>
+<div class= 'container'>
+  <div class='create_shout_out'>
+    <br>
+    <h1>Welcome, <%= @user.handle %>!</h1>
+    <br>
+    <%= @message %><a href="/user/<%= @user.id %>"><%= @user.id %>Go to your profile!</a>
+    <br>
+    <form method="post" action="/save_shout_out">
+      <input type="text" placeholder="enter your shout out here" name="new_shout_out_content" />
+      <input type="submit" value="holla" />
+    </form>
+  </div>
 </div>
+
