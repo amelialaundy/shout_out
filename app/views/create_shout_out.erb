@@ -10,15 +10,5 @@
     <input type="submit" value="holla" />
   </form>
 </div>
-<br>
-<br>
-<div class= 'shout_out'>
-<% @user.followees.each do |followee| %>
-   <% followee.shout_outs.each do |shout_out| %>
-    <p>@<%= followee.handle %></p>
-    <p><%= shout_out.content %></p>
-    <p><%= shout_out.created_at %></p>
-  <% end %>
-<% end %>
 </div>
-</div>
+
